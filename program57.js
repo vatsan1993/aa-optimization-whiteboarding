@@ -7,14 +7,13 @@
 // Examples:
 
 let hasSymmetry = (arr) => {
-  let midIndex = arr.length / 2;
-  let left = arr.slice(0, midIndex);
-  let right = arr.slice(midIndex);
-  for (let val of left) {
-    if (!right.includes(val)) {
+  for (let i = 0; i < arr.length / 2; i++) {
+    let j = arr.length - i - 1;
+    if (arr[i] !== arr[j]) {
       return false;
     }
   }
+
   return true;
 };
 
